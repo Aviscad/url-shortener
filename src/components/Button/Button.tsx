@@ -4,9 +4,10 @@ interface ButtonPropTypes {
 	primary?: boolean
 	secondary?: boolean
 	children: ReactNode | string
+	onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
-const Button = ({ children, primary, secondary }: ButtonPropTypes) => {
+const Button = ({ children, primary, secondary, onClick }: ButtonPropTypes) => {
 	if (primary && secondary)
 		throw new Error("Can't use primary and secondary at the same time on Button")
 
@@ -16,7 +17,14 @@ const Button = ({ children, primary, secondary }: ButtonPropTypes) => {
 		if (secondary) return 'btn-secondary'
 	}
 
-	return <button className={assingButtonClass()}>{children}</button>
+	return (
+		<button
+			className={assingButtonClass()}
+			onClick={(e) => onClick && onClick(e)}
+		>
+			{children}
+		</button>
+	)
 }
 
 export default Button
