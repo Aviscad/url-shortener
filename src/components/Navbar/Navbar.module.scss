@@ -1,0 +1,102 @@
+@use "/src/utils/variables";
+
+.navbar {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: variables.$white;
+}
+
+.icon {
+    z-index: 10;
+    cursor: pointer;
+}
+
+.vissible {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    gap: .5rem;
+    background-color: variables.$primary-2;
+    left: 10%;
+    right: 10%;
+    top: 70px;
+    padding: 1rem;
+    border-radius: variables.$menu-border-radius;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+
+.list-item {
+    cursor: pointer;
+    padding: .5rem 1rem;
+    width: 100%;
+    font-size: 0.925rem;
+    text-align: center;
+    font-weight: bold;
+
+    &:hover {
+        font-weight: 800;
+    }
+
+    &:last-child {
+        border-top: 1px solid hsl(0, 0%, 40%);
+    }
+}
+
+.fade-in {
+    animation: fadeIn ease-in-out .5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+    .vissible {
+        left: 50%;
+        right: 2rem;
+    }
+}
+
+@media (min-width: 701px) {
+    .navbar {
+        color: variables.$neutral-4;
+
+        & ul {
+            align-items: center;
+            justify-content: center;
+
+            & li:first-child {
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            & li:last-child {
+                border: 0;
+            }
+
+            & li:hover {
+                color: variables.$black;
+            }
+        }
+    }
+
+    .vissible {
+        position: static;
+        display: flex;
+        padding: 0;
+        background-color: transparent;
+        border-radius: 0;
+    }
+}

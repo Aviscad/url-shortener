@@ -28,6 +28,18 @@ a {
     color: inherit;
 }
 
+img {
+    width: 350px;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+/* -- BUTTON STYLES -- */
 .btn-primary,
 .btn-secondary,
 .btn {
@@ -35,11 +47,18 @@ a {
     padding: .5rem 2rem;
     border-radius: variables.$btn-border-radius;
     background-color: transparent;
-    color: variables.$white;
     cursor: pointer;
     font-family: inherit;
     font-size: inherit;
     font-weight: bold;
+}
+.btn-primary,
+.btn-secondary{
+    color: variables.$white;
+}
+
+.btn{
+    color: variables.$white;
 }
 
 .btn-primary {
@@ -60,5 +79,120 @@ a {
     &:hover {
         background-color: variables.$primary-hover;
         transition: background .5s ease-in-out;
+    }
+}
+/* -- --- */
+.input-error {
+    outline: 2px solid variables.$secondary;
+}
+
+.input-text {
+    border-radius: variables.$btn-border-radius-2;
+    padding: .75rem 1rem;
+    color: variables.$neutral-2;
+    text-align: center;
+    font-size: inherit;
+}
+
+.main-title,
+.sub-title {
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.paragraph-text {
+    color: variables.$neutral-2;
+    font-size: .90rem;
+    padding: .5rem 1rem;
+}
+
+.list-text {
+    color: variables.$neutral-4;
+    padding: .325rem;
+    width: fit-content;
+    cursor: pointer;
+
+    &:hover {
+        color: variables.$primary-1;
+    }
+}
+
+.media-icon {
+    &:hover {
+        color: variables.$primary-1;
+    }
+}
+.hidden {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+.shadow {
+    box-shadow: -1px 1px 5px 1px variables.$shadow;
+    -webkit-box-shadow: -1px 1px 5px 1px variables.$shadow;
+    -moz-box-shadow: -1px 1px 5px 1px variables.$shadow;
+}
+
+.neutral-dark-2-bg {
+    background-color: variables.$neutral-dark-1 !important;
+    transition: background .5s ease-in-out;
+}
+
+.shake {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@media (min-width: 500px) {
+    img {
+        width: 450px;
+    }
+}
+
+@media (min-width: 701px) {
+
+    .btn,
+    .btn-primary {
+        width: fit-content;
+        padding: .5rem 1rem;
+    }
+
+    .btn-secondary {
+        width: 200px;
+        max-width: fit-content;
+    }
+
+    .btn {
+        color: variables.$neutral-1;
+    }
+
+    .input-text {
+        width: 100%;
     }
 }
