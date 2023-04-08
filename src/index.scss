@@ -27,3 +27,38 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.btn-primary,
+.btn-secondary,
+.btn {
+    display: block;
+    padding: .5rem 2rem;
+    border-radius: variables.$btn-border-radius;
+    background-color: transparent;
+    color: variables.$white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: variables.$primary-1;
+    transition: background .5s ease-in-out;
+
+    &:hover {
+        background-color: variables.$primary-hover;
+        transition: background .5s ease-in-out;
+    }
+}
+
+.btn-secondary {
+    background-color: variables.$primary-1;
+    border-radius: variables.$btn-border-radius-2;
+    transition: background .5s ease-in-out;
+
+    &:hover {
+        background-color: variables.$primary-hover;
+        transition: background .5s ease-in-out;
+    }
+}
