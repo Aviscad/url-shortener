@@ -1,0 +1,52 @@
+@use "/src/utils/variables";
+
+.move-in-between {
+    position: relative;
+    width: 90%;
+    max-width: 350px;
+    display: flex;
+    top: -50%;
+    flex-direction: column;
+    gap: .75rem;
+    border-radius: variables.$menu-border-radius;
+    background: variables.$primary-2 top right / 75% no-repeat url("/src/assets/images/bg-shorten-mobile.svg");
+    padding: 1rem;
+}
+
+.error {
+    color: variables.$secondary;
+    font-size: .7rem;
+    text-align: center;
+    padding: .1rem .5rem;
+}
+
+@media (min-width: 500px) {
+    .move-in-between {
+        max-width: 450px;
+    }
+}
+
+
+@media (min-width: 701px) {
+    .move-in-between {
+        flex-direction: row;
+        align-items: center;
+        max-width: 650px;
+        padding: 2rem;
+        width: 90%;
+        background-image: url("/src/assets/images/bg-shorten-desktop.svg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .error {
+        position: absolute;
+        top: 5rem;
+    }
+}
+
+@media (min-width: 999px) {
+    .move-in-between {
+        max-width: 950px;
+    }
+}
