@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import { LinksType } from '../../services/services'
 import Shorten from '../Shortener/Shortener'
 import styles from './Main.module.scss'
 
@@ -7,9 +8,9 @@ const Main = () => {
 	const [data, setData] = useState({})
 	const [error, setError] = useState(false)
 
-	console.log(data, error)
-	const handleFormSubmit = (info: string) => {
+	const handleFormSubmit = (info: LinksType) => {
 		setData(info)
+		//console.log(data)
 	}
 
 	const handleError = (err: boolean) => {
