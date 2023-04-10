@@ -27,6 +27,11 @@
     color: variables.$primary-1;
 }
 
+.short-link:hover,
+.original-link:hover{
+    text-decoration: underline;
+}
+
 @media (min-width: 500px) {
     .move-in-between {
         max-width: 450px;

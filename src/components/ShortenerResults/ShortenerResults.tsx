@@ -20,8 +20,22 @@ const ShortenerResults = ({ links, hasError }: ShortenerResultsProps) => {
 
 	return (
 		<article className={getClassName(hasError)}>
-			<p className={styles['original-link']}>{links.original}</p>
-			<p className={styles['short-link']}>{links.short}</p>
+			<a
+				className={styles['original-link']}
+				href={links.original}
+				target='_blank'
+				rel='noreferrer'
+			>
+				{links.original}
+			</a>
+			<a
+				className={styles['short-link']}
+				href={links.short}
+				target='_blank'
+				rel='noreferrer'
+			>
+				{links.short}
+			</a>
 			<button
 				className={isCopied ? 'btn-secondary neutral-dark-2-bg' : 'btn-secondary'}
 				onClick={() => handleCopy(links.short)}
