@@ -1,0 +1,62 @@
+@use "/src/utils/variables";
+
+.move-in-between {
+    position: relative;
+    width: 90%;
+    max-width: 350px;
+    display: flex;
+    top: calc(-50% + 1.5rem);
+    flex-direction: column;
+    border-radius: variables.$menu-border-radius;
+    background-color: variables.$white;
+    padding: 1rem .5rem;
+    text-align: left;
+    height: fit-content;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.original-link {
+    border-bottom: 1px solid variables.$neutral-4;
+    overflow-wrap: break-word;
+    padding: .5rem;
+}
+
+.short-link {
+    padding: .5rem;
+    color: variables.$primary-1;
+}
+
+@media (min-width: 500px) {
+    .move-in-between {
+        max-width: 450px;
+    }
+}
+
+@media (min-width: 701px) {
+    .move-in-between {
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+        max-width: 650px;
+    }
+
+    .original-link {
+        border: none;
+        max-width: 50%;
+    }
+
+}
+
+@media (min-width: 999px) {
+    .move-in-between {
+        max-width: 950px;
+        top: calc(-50%);
+        justify-content: space-between;
+    }
+
+    .original-link {
+        max-width: 60%;
+    }
+}

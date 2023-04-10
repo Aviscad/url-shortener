@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
 import { LinksType } from '../../services/services'
-import Shorten from '../Shortener/Shortener'
+import Shortener from '../Shortener/Shortener'
+import ShortenerResults from '../ShortenerResults/ShortenerResults'
 import styles from './Main.module.scss'
 
 const Main = () => {
-	const [data, setData] = useState({})
-	const [error, setError] = useState(false)
+	const [data, setData] = useState<LinksType>({ short: '', original: '' })
+	const [error, setError] = useState<boolean | null>(null)
 
 	const handleFormSubmit = (info: LinksType) => {
 		setData(info)
-		//console.log(data)
 	}
 
 	const handleError = (err: boolean) => {
@@ -19,9 +19,13 @@ const Main = () => {
 
 	return (
 		<main className={styles.container}>
-			<Shorten
+			<Shortener
 				handleSubmit={handleFormSubmit}
 				hasError={handleError}
+			/>
+			<ShortenerResults
+				links={data}
+				hasError={error}
 			/>
 		</main>
 	)

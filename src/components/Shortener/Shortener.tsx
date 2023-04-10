@@ -1,13 +1,14 @@
 import { FormEvent, useEffect, useRef, useState } from 'react'
 
+import { LinksType } from '../../services/services'
 import styles from './Shortener.module.scss'
 
 interface ShortenerProps {
-	handleSubmit: (info: string) => void
+	handleSubmit: (info: LinksType) => void
 	hasError: (err: boolean) => void
 }
 
-const Shorten = ({ handleSubmit, hasError }: ShortenerProps) => {
+const Shortener = ({ handleSubmit, hasError }: ShortenerProps) => {
 	const inputURL = useRef<null | HTMLInputElement>(null)
 	const [url, setURL] = useState('')
 	const [error, setError] = useState(false)
@@ -29,7 +30,13 @@ const Shorten = ({ handleSubmit, hasError }: ShortenerProps) => {
 				const json = await shortenURL.json()
 				if (json.ok) {
 					const response = await json.result
-					handleSubmit(response)
+
+					const responseLinks = {
+						short: response['full_short_link'],
+						original: response['original_link'],
+					}
+
+					handleSubmit(responseLinks)
 					setError(false)
 					hasError(false)
 					setErrorText('')
@@ -67,4 +74,4 @@ const Shorten = ({ handleSubmit, hasError }: ShortenerProps) => {
 	)
 }
 
-export default Shorten
+export default Shortener
