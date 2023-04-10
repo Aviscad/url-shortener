@@ -13,7 +13,7 @@ const Navbar = () => {
 
 	useEffect(() => {
 		const windowResize = () => {
-			if (window.innerWidth > 700) {
+			if (window.innerWidth > 750) {
 				setMobileMenu(false)
 				setOpen(true)
 			} else {
@@ -22,7 +22,7 @@ const Navbar = () => {
 			}
 		}
 
-		if (window.innerWidth > 700) {
+		if (window.innerWidth > 750) {
 			setMobileMenu(false)
 			setOpen(true)
 		}
