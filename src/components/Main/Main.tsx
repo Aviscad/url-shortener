@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { LinksType } from '../../services/services'
+import BoostLinks from '../BoostLinks/BoostLinks'
 import CardContainer from '../CardContainer/CardContainer'
 import Shortener from '../Shortener/Shortener'
 import ShortenerResults from '../ShortenerResults/ShortenerResults'
@@ -29,6 +30,7 @@ const Main = () => {
 				hasError={error}
 			/>
 			<CardContainer />
+			<BoostLinks />
 		</main>
 	)
 }

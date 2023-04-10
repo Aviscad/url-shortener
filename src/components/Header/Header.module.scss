@@ -40,7 +40,7 @@
     align-items: center;
     gap: .5rem;
     padding: 5rem 1rem;
-    max-width: 1000px;
+    max-width: variables.$max-width;
     margin: auto;
 }
 
@@ -85,9 +85,10 @@
     }
 }
 
-@media (min-width: 999px) {
+@media (min-width: 1200px) {
     .content {
-        justify-content: center;
+        justify-content: space-around;
         gap: 5rem;
+        width: variables.$max-width;
     }
 }

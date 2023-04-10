@@ -1,3 +1,5 @@
+@use "/src/utils/variables";
+
 .container {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,7 @@
     align-items: center;
     gap: 5rem;
     padding: 4rem 1rem 5rem 1rem;
-    max-width: 1000px;
+    max-width: variables.$max-width;
 }
 
 @media (min-width: 999px) {

@@ -44,7 +44,8 @@
         align-items: center;
         padding: 1rem;
         gap: 1rem;
-        max-width: 650px;
+        max-width: 700px;
+        justify-content: space-between;
     }
 
     .original-link {
@@ -53,15 +54,22 @@
     }
 
 }
-
-@media (min-width: 999px) {
+@media (min-width: 800px) {
     .move-in-between {
-        max-width: 1000px;
-        top: calc(-50%);
-        justify-content: space-between;
+        max-width: 800px;
     }
+}
 
-    .original-link {
-        max-width: 60%;
+@media (min-width: 900px) {
+    .move-in-between {
+        max-width: 830px;
+        top: calc(-50%);
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .move-in-between {
+        max-width: variables.$max-width;
     }
 }
