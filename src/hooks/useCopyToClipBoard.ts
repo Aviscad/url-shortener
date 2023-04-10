@@ -1,30 +1,31 @@
 import { useEffect, useState } from 'react'
 
-export default function useCopyToClipboard() {
-	const [copied, setCopied] = useState(false)
+export default function useCopyToClipboard(): [boolean, (link: string) => void] {
+	const [isCopied, setIsCopied] = useState<boolean>(false)
 
-	const handleCopy = async (link: string) => {
-		if (!copied && link !== '') {
-			try {
-				await navigator.clipboard.writeText(link)
-				setCopied(!copied)
-			} catch (err) {
+	const handleCopy = (link: string) => {
+		if (!link) return
+		navigator.clipboard
+			.writeText(link)
+			.then(() => {
+				setIsCopied(true)
+			})
+			.catch((err) => {
 				console.error('Failed to copy: ', err)
-			}
-		}
+			})
 	}
 
 	useEffect(() => {
 		let timer: ReturnType<typeof setTimeout>
 
-		if (copied) {
+		if (isCopied) {
 			timer = setTimeout(() => {
-				setCopied(false)
+				setIsCopied(false)
 			}, 1500)
 		}
 
 		return () => clearTimeout(timer)
-	}, [copied])
+	}, [isCopied])
 
-	return [copied, handleCopy]
+	return [isCopied, handleCopy]
 }
