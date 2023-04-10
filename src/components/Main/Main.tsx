@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { LinksType } from '../../services/services'
+import CardContainer from '../CardContainer/CardContainer'
 import Shortener from '../Shortener/Shortener'
 import ShortenerResults from '../ShortenerResults/ShortenerResults'
 import styles from './Main.module.scss'
@@ -27,6 +28,7 @@ const Main = () => {
 				links={data}
 				hasError={error}
 			/>
+			<CardContainer />
 		</main>
 	)
 }

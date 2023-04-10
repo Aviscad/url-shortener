@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 4rem 1rem 5rem 1rem;
+    max-width: 1000px;
+}
+
+@media (min-width: 999px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 2rem;
+        width: fit-content;
+        padding: 2rem 1rem 3rem 1rem;
+    }
+}
