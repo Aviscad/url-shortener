@@ -3,7 +3,7 @@ export interface LinksType {
 	original: string
 }
 
-export interface cardProps {
+export interface CardProps {
 	id?: number
 	title: string
 	text: string

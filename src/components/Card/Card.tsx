@@ -1,10 +1,10 @@
 import { faChartLine, faGauge, faPaintBrush } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { cardProps } from '../../services/services'
+import { CardProps } from '../../services/services'
 import styles from './Card.module.scss'
 
-const Card = ({ title, text, icon }: cardProps) => {
+const Card = ({ title, text, icon }: CardProps) => {
 	const getIcon = () => {
 		if (icon === 'faChartLine') return faChartLine
 		if (icon === 'faGauge') return faGauge

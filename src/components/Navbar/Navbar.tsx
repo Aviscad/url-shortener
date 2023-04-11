@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { ReactComponent as Logo } from '/src/assets/images/logo.svg'
 
-import { useMobileMenu } from '../../hooks/useMobileMenu'
+import useMobileMenu from '../../hooks/useMobileMenu'
 import LogSingIn from '../LogInSingIn/LogInSingIn'
 import styles from './Navbar.module.scss'
 

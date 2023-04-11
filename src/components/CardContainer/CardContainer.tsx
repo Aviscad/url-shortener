@@ -1,5 +1,5 @@
 import CARDS_INFO from '../../data/card-data'
-import { cardProps } from '../../services/services'
+import { CardProps } from '../../services/services'
 import Card from '../Card/Card'
 import styles from './CardContainer.module.scss'
 
@@ -12,7 +12,7 @@ const CardContainer = () => {
 				dashboard.
 			</p>
 			<article className={styles.container}>
-				{CARDS_INFO.map((card: cardProps) => {
+				{CARDS_INFO.map((card: CardProps) => {
 					return (
 						<Card
 							title={card.title}
