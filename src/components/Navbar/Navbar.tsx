@@ -1,42 +1,14 @@
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useEffect, useState } from 'react'
 
 import { ReactComponent as Logo } from '/src/assets/images/logo.svg'
 
+import { useMobileMenu } from '../../hooks/useMobileMenu'
 import LogSingIn from '../LogInSingIn/LogInSingIn'
 import styles from './Navbar.module.scss'
 
 const Navbar = () => {
-	const [open, setOpen] = useState(false)
-	const [mobileMenu, setMobileMenu] = useState(true)
-
-	useEffect(() => {
-		const windowResize = () => {
-			if (window.innerWidth > 750) {
-				setMobileMenu(false)
-				setOpen(true)
-			} else {
-				setMobileMenu(true)
-				setOpen(false)
-			}
-		}
-
-		if (window.innerWidth > 750) {
-			setMobileMenu(false)
-			setOpen(true)
-		}
-
-		window.addEventListener('resize', windowResize)
-
-		return () => {
-			window.removeEventListener('resize', windowResize)
-		}
-	}, [open])
-
-	const toggleChange = () => {
-		setOpen(!open)
-	}
+	const [open, mobileMenu, toggleChange] = useMobileMenu()
 
 	return (
 		<nav className={styles.navbar}>
@@ -84,7 +56,7 @@ const Navbar = () => {
 			{mobileMenu && (
 				<FontAwesomeIcon
 					icon={!open ? faBars : faXmark}
-					onClick={toggleChange}
+					onClick={() => toggleChange()}
 					color='hsl(257, 7%, 63%)'
 					size='2x'
 					className={!open ? '' : styles['fade-in']}
