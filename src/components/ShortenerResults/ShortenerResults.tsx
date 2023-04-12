@@ -4,22 +4,15 @@ import styles from './ShortenerResults.module.scss'
 
 interface ShortenerResultsProps {
 	links: LinksType
-	hasError: boolean | null
 }
 
-const ShortenerResults = ({ links, hasError }: ShortenerResultsProps) => {
+const ShortenerResults = ({ links }: ShortenerResultsProps) => {
 	const [isCopied, handleCopy] = useCopyToClipboard()
-
-	const getClassName = (state: boolean | null): string => {
-		if (state === null) return `${styles['move-in-between']} hidden`
-		if (hasError) return `${styles['move-in-between']} hidden`
-		return styles['move-in-between']
-	}
 
 	const getBtnText = () => (!isCopied ? 'Copy' : 'Copied!')
 
 	return (
-		<article className={getClassName(hasError)}>
+		<article className={styles['move-in-between']}>
 			<a
 				className={styles['original-link']}
 				href={links.original}

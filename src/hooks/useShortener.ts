@@ -1,13 +1,13 @@
 import { FormEvent, useEffect, useRef, useState } from 'react'
 
-import { LinksType } from '../services/services'
+import { isAlreadyShortened, LinksType } from '../services/services'
 
 interface UseShortenerProps {
 	handleSubmit: (info: LinksType) => void
-	hasError: (err: boolean) => void
+	links: LinksType[]
 }
 
-export default function useShortener({ handleSubmit, hasError }: UseShortenerProps) {
+export default function useShortener({ handleSubmit, links }: UseShortenerProps) {
 	const inputURL = useRef<null | HTMLInputElement>(null)
 	const [url, setURL] = useState('')
 	const [error, setError] = useState(false)
@@ -17,11 +17,10 @@ export default function useShortener({ handleSubmit, hasError }: UseShortenerPro
 		e.preventDefault()
 		if (inputURL.current !== null) setURL(inputURL.current.value)
 	}
-
 	useEffect(() => {
 		if (url === '') return
 		const shortenURL = async () => {
-			if (inputURL.current) {
+			if (inputURL.current && !isAlreadyShortened(links, url)) {
 				inputURL.current.classList.remove('input-error')
 				inputURL.current.classList.remove('shake')
 
@@ -30,23 +29,32 @@ export default function useShortener({ handleSubmit, hasError }: UseShortenerPro
 				if (json.ok) {
 					const response = await json.result
 
-					const responseLinks = {
+					const responseLinks: LinksType = {
 						short: response['full_short_link'],
 						original: response['original_link'],
 					}
 
 					handleSubmit(responseLinks)
 					setError(false)
-					hasError(false)
 					setErrorText('')
+					inputURL.current.value = ''
 				} else {
 					setError(true)
-					hasError(true)
 					setErrorText(json.error)
 
 					inputURL.current.focus()
+					inputURL.current.select()
 					inputURL.current.classList.add('input-error')
 					inputURL.current.classList.add('shake')
+				}
+			} else {
+				if (inputURL.current) {
+					inputURL.current.focus()
+					inputURL.current.select()
+					inputURL.current.classList.add('input-error')
+					inputURL.current.classList.add('shake')
+					setError(true)
+					setErrorText(`The url ${url} has already been shortened!`)
 				}
 			}
 		}

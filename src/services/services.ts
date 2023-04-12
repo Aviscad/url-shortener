@@ -18,6 +18,5 @@ export const isAlreadyShortened = (links: LinksType[], link: string) => {
 			? true
 			: false
 	})
-
 	return isShortened.length === 0 ? false : true
 }

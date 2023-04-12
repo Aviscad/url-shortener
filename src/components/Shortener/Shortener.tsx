@@ -4,13 +4,13 @@ import styles from './Shortener.module.scss'
 
 interface ShortenerProps {
 	handleSubmit: (info: LinksType) => void
-	hasError: (err: boolean) => void
+	links: LinksType[]
 }
 
-const Shortener = ({ handleSubmit, hasError }: ShortenerProps) => {
+const Shortener = ({ handleSubmit, links }: ShortenerProps) => {
 	const { inputURL, handleSub, error, errorText } = useShortener({
 		handleSubmit,
-		hasError,
+		links,
 	})
 
 	return (
