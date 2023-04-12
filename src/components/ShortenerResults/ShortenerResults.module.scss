@@ -1,75 +1,90 @@
-@use "/src/utils/variables";
+@use '/src/utils/variables';
 
 .move-in-between {
-    position: relative;
-    width: 90%;
-    max-width: 350px;
-    display: flex;
-    top: calc(-50% + 1.5rem);
-    flex-direction: column;
-    border-radius: variables.$menu-border-radius;
-    background-color: variables.$white;
-    padding: 1rem .5rem;
-    text-align: left;
-    height: fit-content;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
+	position: relative;
+	width: 90%;
+	max-width: 350px;
+	display: flex;
+	top: calc(-50% + 1.5rem);
+
+	flex-direction: column;
+	border-radius: variables.$menu-border-radius;
+	background-color: variables.$white;
+	padding: 1rem 0.5rem;
+	text-align: left;
+	height: fit-content;
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
 }
 
 .original-link {
-    border-bottom: 1px solid variables.$neutral-4;
-    overflow-wrap: break-word;
-    padding: .5rem;
+	border-bottom: 1px solid variables.$neutral-4;
+	overflow-wrap: break-word;
+	padding: 0.5rem;
+	text-align: center;
+	flex: 2;
 }
 
 .short-link {
-    padding: .5rem;
-    color: variables.$primary-1;
+	padding: 0.5rem;
+	color: variables.$primary-1;
+	text-align: center;
+	flex: 1;
 }
 
 .short-link:hover,
-.original-link:hover{
-    text-decoration: underline;
+.original-link:hover {
+	text-decoration: underline;
 }
 
 @media (min-width: 500px) {
-    .move-in-between {
-        max-width: 450px;
-    }
+	.move-in-between {
+		max-width: 450px;
+	}
 }
 
 @media (min-width: 701px) {
-    .move-in-between {
-        flex-direction: row;
-        align-items: center;
-        padding: 1rem;
-        gap: 1rem;
-        max-width: 700px;
-        justify-content: space-between;
-    }
+	.move-in-between {
+		max-width: 700px;
+	}
+}
 
-    .original-link {
-        border: none;
-        max-width: 50%;
-    }
+@media (min-width: 801px) {
+	.move-in-between {
+		flex-direction: row;
+		align-items: center;
+		padding: 1rem 2rem;
+		gap: 1rem;
+		min-width: 700px;
+		justify-content: space-between;
+		top: calc(-70%);
+		margin-bottom: 0.5rem;
+	}
 
+	.original-link {
+		border: none;
+		word-break: break-all;
+	}
+
+	.short-link,
+	.original-link {
+		text-align: left;
+	}
 }
 @media (min-width: 800px) {
-    .move-in-between {
-        max-width: 800px;
-    }
+	.move-in-between {
+		max-width: 800px;
+	}
 }
 
 @media (min-width: 900px) {
-    .move-in-between {
-        max-width: 830px;
-        top: calc(-50%);
-    }
-    
+	.move-in-between {
+		max-width: 830px;
+	}
 }
 
 @media (min-width: 1200px) {
-    .move-in-between {
-        max-width: variables.$max-width;
-    }
+	.move-in-between {
+		max-width: variables.$max-width;
+	}
 }
