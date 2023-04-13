@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import useLocalStorage from '../../hooks/useLocalStorage'
 import { LinksType } from '../../services/services'
 import BoostLinks from '../BoostLinks/BoostLinks'
 import CardContainer from '../CardContainer/CardContainer'
@@ -8,11 +9,13 @@ import Shortener from '../Shortener/Shortener'
 import styles from './Main.module.scss'
 
 const Main = () => {
-	const [links, setLinks] = useState<LinksType[]>([])
+	const [setLocalStorage, getLocalStorage] = useLocalStorage()
+	const [links, setLinks] = useState<LinksType[]>(getLocalStorage('links'))
 
 	const handleFormSubmit = (info: LinksType) => {
 		const newArr = [...links]
 		newArr.push(info)
+		setLocalStorage('links', JSON.stringify(newArr))
 		setLinks(newArr)
 	}
 
