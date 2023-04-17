@@ -6,6 +6,12 @@ interface ShortenedLinksProps {
 	handleDelete: (value: string) => void
 }
 
+/* 
+	TO DO:
+	- Create New Styles for ShortenerResults Container
+	- Remove Relative Position from ShortenerResults
+*/
+
 const ShortenedLinks = ({ list, handleDelete }: ShortenedLinksProps) => {
 	return (
 		<>

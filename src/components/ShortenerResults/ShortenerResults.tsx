@@ -1,3 +1,6 @@
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import useCopyToClipboard from '../../hooks/useCopyToClipBoard'
 import { LinksType } from '../../services/services'
 import styles from './ShortenerResults.module.scss'
@@ -36,7 +39,12 @@ const ShortenerResults = ({ links, onDelete }: ShortenerResultsProps) => {
 			>
 				{getBtnText()}
 			</button>
-			<button onClick={() => onDelete(links.original)}>Del</button>
+			<FontAwesomeIcon
+				className='text-secondary icon'
+				icon={faTrashAlt}
+				size='xl'
+				onClick={() => onDelete(links.original)}
+			/>
 		</article>
 	)
 }

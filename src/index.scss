@@ -39,6 +39,15 @@ img {
 	flex-direction: column;
 }
 
+.text-secondary{
+	color: variables.$secondary;
+}
+
+.icon{
+	padding: .5rem;
+	cursor: pointer;
+}
+
 /* -- BUTTON STYLES -- */
 .btn-primary,
 .btn-secondary,

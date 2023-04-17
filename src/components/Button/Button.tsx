@@ -7,6 +7,11 @@ interface ButtonPropTypes {
 	onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
+/*
+	TO DO:
+	- Add support for custom className
+*/
+
 const Button = ({ children, primary, secondary, onClick }: ButtonPropTypes) => {
 	if (primary && secondary)
 		throw new Error("Can't use primary and secondary at the same time on Button")
