@@ -3,7 +3,7 @@ import ShortenerResults from '../ShortenerResults/ShortenerResults'
 
 interface ShortenedLinksProps {
 	list: LinksType[]
-	handleDelete: (key: string, value: string) => void
+	handleDelete: (value: string) => void
 }
 
 const ShortenedLinks = ({ list, handleDelete }: ShortenedLinksProps) => {

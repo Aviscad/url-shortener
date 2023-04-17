@@ -4,7 +4,7 @@ import styles from './ShortenerResults.module.scss'
 
 interface ShortenerResultsProps {
 	links: LinksType
-	onDelete: (key: string, value: string) => void
+	onDelete: (value: string) => void
 }
 
 const ShortenerResults = ({ links, onDelete }: ShortenerResultsProps) => {
@@ -36,7 +36,7 @@ const ShortenerResults = ({ links, onDelete }: ShortenerResultsProps) => {
 			>
 				{getBtnText()}
 			</button>
-			<button onClick={() => onDelete('links', links.original)}>Del</button>
+			<button onClick={() => onDelete(links.original)}>Del</button>
 		</article>
 	)
 }
