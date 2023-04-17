@@ -9,7 +9,7 @@ import Shortener from '../Shortener/Shortener'
 import styles from './Main.module.scss'
 
 const Main = () => {
-	const [setLocalStorage, getLocalStorage] = useLocalStorage()
+	const [setLocalStorage, getLocalStorage, delItemLocalStorage] = useLocalStorage()
 	const [links, setLinks] = useState<LinksType[]>(getLocalStorage('links'))
 
 	const handleFormSubmit = (info: LinksType) => {
@@ -25,7 +25,10 @@ const Main = () => {
 				handleSubmit={handleFormSubmit}
 				links={links}
 			/>
-			<ShortenedLinks list={links} />
+			<ShortenedLinks
+				list={links}
+				handleDelete={delItemLocalStorage}
+			/>
 			<CardContainer />
 			<BoostLinks />
 		</main>

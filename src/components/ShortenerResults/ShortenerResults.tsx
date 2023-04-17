@@ -4,9 +4,10 @@ import styles from './ShortenerResults.module.scss'
 
 interface ShortenerResultsProps {
 	links: LinksType
+	onDelete: (key: string, value: string) => void
 }
 
-const ShortenerResults = ({ links }: ShortenerResultsProps) => {
+const ShortenerResults = ({ links, onDelete }: ShortenerResultsProps) => {
 	const [isCopied, handleCopy] = useCopyToClipboard()
 
 	const getBtnText = () => (!isCopied ? 'Copy' : 'Copied!')
@@ -35,6 +36,7 @@ const ShortenerResults = ({ links }: ShortenerResultsProps) => {
 			>
 				{getBtnText()}
 			</button>
+			<button onClick={() => onDelete('links', links.original)}>Del</button>
 		</article>
 	)
 }
