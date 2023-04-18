@@ -10,6 +10,10 @@
 	max-width: variables.$max-width;
 }
 
+.wrapper{
+	margin-top: 2rem;
+}
+
 @media (min-width: 999px) {
 	.container {
 		flex-direction: row;

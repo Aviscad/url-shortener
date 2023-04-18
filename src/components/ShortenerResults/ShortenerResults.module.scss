@@ -1,12 +1,9 @@
 @use '/src/utils/variables';
 
 .move-in-between {
-	position: relative;
 	width: 90%;
 	max-width: 350px;
 	display: flex;
-	top: calc(-50% + 1.5rem);
-
 	flex-direction: column;
 	border-radius: variables.$menu-border-radius;
 	background-color: variables.$white;
@@ -57,7 +54,6 @@
 		gap: 1rem;
 		min-width: 700px;
 		justify-content: space-between;
-		top: calc(-70%);
 		margin-bottom: 0.5rem;
 	}
 

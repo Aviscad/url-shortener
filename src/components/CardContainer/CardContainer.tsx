@@ -5,7 +5,7 @@ import styles from './CardContainer.module.scss'
 
 const CardContainer = () => {
 	return (
-		<section>
+		<section className={styles.wrapper}>
 			<h2>Advanced Statistics</h2>
 			<p className='paragraph-text'>
 				Track how your links are performing across the web with our advanced statistics

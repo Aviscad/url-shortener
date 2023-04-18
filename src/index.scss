@@ -46,6 +46,12 @@ img {
 .icon{
 	padding: .5rem;
 	cursor: pointer;
+	max-width: fit-content;
+	margin: auto;
+
+	&:hover{
+		color: variables.$secondary-hover
+	}
 }
 
 /* -- BUTTON STYLES -- */
