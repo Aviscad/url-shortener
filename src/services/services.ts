@@ -20,3 +20,8 @@ export const isAlreadyShortened = (links: LinksType[], link: string) => {
 	})
 	return isShortened.length === 0 ? false : true
 }
+
+export const filterLocalStorage = (word: string, links: LinksType[]) => {
+	const values = links.filter((link) => link.original.includes(word))
+	return values.length > 0 ? values : []
+}

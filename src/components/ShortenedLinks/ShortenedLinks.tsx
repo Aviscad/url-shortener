@@ -5,16 +5,11 @@ interface ShortenedLinksProps {
 	list: LinksType[]
 	handleDelete: (value: string) => void
 }
-
-/* 
-	TO DO:
-	- Create New Styles for ShortenerResults Container
-	- Remove Relative Position from ShortenerResults
-*/
-
 const ShortenedLinks = ({ list, handleDelete }: ShortenedLinksProps) => {
+	console.log('I render!')
 	return (
 		<>
+			{list.length === 0 && 'The word is not part of any saved link'}
 			{list.map((l) => (
 				<ShortenerResults
 					links={l}
