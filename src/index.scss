@@ -43,10 +43,9 @@ img {
 	color: variables.$secondary;
 }
 
-.icon{
+.custom-icon{
 	padding: .5rem;
 	cursor: pointer;
-	max-width: fit-content;
 	margin: auto;
 
 	&:hover{

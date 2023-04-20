@@ -40,7 +40,7 @@ const ShortenerResults = ({ links, onDelete }: ShortenerResultsProps) => {
 				{getBtnText()}
 			</button>
 			<FontAwesomeIcon
-				className='text-secondary icon'
+				className='text-secondary custom-icon'
 				icon={faTrashAlt}
 				size='xl'
 				onClick={() => onDelete(links.original)}
