@@ -39,17 +39,17 @@ img {
 	flex-direction: column;
 }
 
-.text-secondary{
+.text-secondary {
 	color: variables.$secondary;
 }
 
-.custom-icon{
-	padding: .5rem;
+.custom-icon {
+	padding: 0.5rem;
 	cursor: pointer;
 	margin: auto;
 
-	&:hover{
-		color: variables.$secondary-hover
+	&:hover {
+		color: variables.$secondary-hover;
 	}
 }
 
