@@ -1,4 +1,3 @@
-import useLocalStorage from '../../hooks/useLocalStorage'
 import { LinksType } from '../../services/services'
 import ShortenerResults from '../ShortenerResults/ShortenerResults'
 
@@ -8,8 +7,6 @@ interface ShortenedLinksProps {
 	message: string
 }
 const ShortenedLinks = ({ list, handleDelete, message }: ShortenedLinksProps) => {
-	const [setLocalStorage, delItemLocalStorage, links] = useLocalStorage('links')
-
 	return (
 		<>
 			<small className='small-text'>{message}</small>

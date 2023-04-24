@@ -30,6 +30,7 @@ const Main = () => {
 		const newArr = [...links]
 		newArr.push(info)
 		setLocalStorage(JSON.stringify(newArr))
+		setWord('')
 	}
 
 	const getMessage = () => {
@@ -41,7 +42,7 @@ const Main = () => {
 
 	useEffect(() => {
 		setHelper(filterLocalStorage(debouncedValue, links))
-	}, [debouncedValue])
+	}, [debouncedValue, links])
 
 	return (
 		<main className={styles.container}>
