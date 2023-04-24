@@ -1,15 +1,18 @@
+import useLocalStorage from '../../hooks/useLocalStorage'
 import { LinksType } from '../../services/services'
 import ShortenerResults from '../ShortenerResults/ShortenerResults'
 
 interface ShortenedLinksProps {
 	list: LinksType[]
 	handleDelete: (value: string) => void
+	message: string
 }
-const ShortenedLinks = ({ list, handleDelete }: ShortenedLinksProps) => {
-	console.log('I render!')
+const ShortenedLinks = ({ list, handleDelete, message }: ShortenedLinksProps) => {
+	const [setLocalStorage, delItemLocalStorage, links] = useLocalStorage('links')
+
 	return (
 		<>
-			{list.length === 0 && 'The word is not part of any saved link'}
+			<small className='small-text'>{message}</small>
 			{list.map((l) => (
 				<ShortenerResults
 					links={l}

@@ -32,6 +32,13 @@ const Main = () => {
 		setLocalStorage(JSON.stringify(newArr))
 	}
 
+	const getMessage = () => {
+		if (debouncedValue && helper.length === 0 && links.length !== 0)
+			return 'The word is not part of any saved link'
+		if (links.length === 0) return 'There are no links shortened'
+		return ''
+	}
+
 	useEffect(() => {
 		setHelper(filterLocalStorage(debouncedValue, links))
 	}, [debouncedValue])
@@ -42,9 +49,15 @@ const Main = () => {
 				handleSubmit={handleFormSubmit}
 				links={links}
 			/>
-			<form onSubmit={handleSubmit}>
+			<form
+				onSubmit={handleSubmit}
+				className={styles['search-container']}
+			>
 				<input
 					type='search'
+					className={styles['search-input']}
+					name='searchInput'
+					placeholder='Search...'
 					value={word}
 					onChange={handleChange}
 				/>
@@ -52,6 +65,7 @@ const Main = () => {
 			<ShortenedLinks
 				list={debouncedValue === '' ? links : helper}
 				handleDelete={delItemLocalStorage}
+				message={getMessage()}
 			/>
 			<CardContainer />
 			<BoostLinks />
