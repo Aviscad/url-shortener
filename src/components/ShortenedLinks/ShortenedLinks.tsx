@@ -4,17 +4,12 @@ import ShortenerResults from '../ShortenerResults/ShortenerResults'
 interface ShortenedLinksProps {
 	list: LinksType[]
 	handleDelete: (value: string) => void
+	message: string
 }
-
-/* 
-	TO DO:
-	- Create New Styles for ShortenerResults Container
-	- Remove Relative Position from ShortenerResults
-*/
-
-const ShortenedLinks = ({ list, handleDelete }: ShortenedLinksProps) => {
+const ShortenedLinks = ({ list, handleDelete, message }: ShortenedLinksProps) => {
 	return (
 		<>
+			<small className='small-text'>{message}</small>
 			{list.map((l) => (
 				<ShortenerResults
 					links={l}
