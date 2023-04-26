@@ -58,7 +58,7 @@ const Main = () => {
 					type='search'
 					className={styles['search-input']}
 					name='searchInput'
-					placeholder='Search...'
+					placeholder='Search by original link'
 					value={word}
 					onChange={handleChange}
 				/>
