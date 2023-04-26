@@ -6,8 +6,8 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Screenshots](#screenshots)
   - [Built with](#built-with)
 - [Setup](#setup)
   - [Installation](#installation)
@@ -23,22 +23,27 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
-- Shorten any valid URL
-- See a list of their shortened links, even after refreshing the browser
-- Copy the shortened link to their clipboard in a single click
+- Shorten any valid URL.
+- See a list of their shortened links, even after refreshing the browser.
+- Copy the shortened link to their clipboard in a single click.
 - Delete any link of their shortened links list.
+- Search any link that has been shortened.
 - Receive an error message when the `form` is submitted if:
-  - The `input` field is empty
-  - The link has already been shortened
-  - The link is not a valid url
-
-### Screenshot
-
-![]()
+  - The `input` field is empty.
+  - The link has already been shortened.
+  - The link is not a valid url.
 
 ### Links
 
 #### Live Site URL: [https://aviscad.github.io/url-shortener/](https://aviscad.github.io/url-shortener/)
+
+### Screenshots
+
+<img src="https://github.com/Aviscad/url-shortener/blob/development/showcase-images/large-full.png" width="915px">
+
+| Mobile                                                                                                             | Medium                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/Aviscad/url-shortener/blob/development/showcase-images/small-full.png" width="250px"> | <img src="https://github.com/Aviscad/url-shortener/blob/development/showcase-images/medium-full.png" width="625px"> |
 
 ### Built with
 
